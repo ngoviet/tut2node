@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head><% include ../partials/template/head.ejs %></head>
+	<body>
+		<% include ../partials/template/header.ejs %>
+		<section class="layout">
+			<div class="primary">
+				<h1>Blob ID <%= blob._id %></h1>
+        <form name="updateblob" action="/blobs/<%= blob._id %>/edit" method="post" enctype="application/x-www-form-urlencoded">
+          <p>Name: <input type="text" id="inputName" value="<%= blob.name %>" name="name"></p>
+          <p>Badge: <input type="number" id="inputBadge" value="<%= blob.badge %>" name="badge"></p>
+          <p>DOB: <input type="date" id="inputDob" value="<%= blobdob %>" name="dob"></p>
+          <p>Are you loved?: <input type="checkbox" id="inputIsLoved" <%= blob.isloved === true ? 'checked': undefined  %> name="isloved"></p>
+          <%= console.log(blob.isloved)  %>
+          <p><button id="btnSubmit" type="submit">Submit</button></p>
+        </form>
+			</div>
+		</section>
+		<aside class="secondary">
+			Secondary class
+		</aside>
+		<% include ../partials/template/footer.ejs %>
+		<% include ../partials/template/jsdefaults.ejs %>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head><% include ../partials/template/head.ejs %></head>
+	<body>
+		<% include ../partials/template/header.ejs %>
+		<section class="layout">
+			<div class="primary">
+				<h1>Infophoto <%= blob._id %></h1>
+        		<p>Name: <%= blob.name %></p>
+        		<p>Badge: <%= blob.badge %></p>
+        		<p>DOB: <%= blobdob %></p>
+        		<p>Is loved: <%= blob.isloved ? true: false %></p>
+			</div>
+		</section>
+		<aside class="secondary">
+			Secondary class
+		</aside>
+		<% include ../partials/template/footer.ejs %>
+		<% include ../partials/template/jsdefaults.ejs %>
+	</body>
+</html>

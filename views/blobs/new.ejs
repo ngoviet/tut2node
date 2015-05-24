@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head><% include ../partials/template/head.ejs %></head>
+	<body>
+		<% include ../partials/template/header.ejs %>
+		<section class="layout">
+			<div class="primary">
+				<h1><%= title %></h1>
+        <form name="addblob" action="/blobs" method="post">
+          <p>Name: <input type="text" id="inputName" placeholder="Ngô Việt" name="name"></p>
+          <p>Badge: <input type="number" id="inputBadge" placeholder="123456" name="badge"></p>
+          <p>DOB: <input type="date" id="inputDob" name="dob"></p>
+          <p>Are you loved?: <input type="checkbox" id="inputIsLoved" name="isloved"></p>
+          <p><button id="btnSubmit" type="submit">Submit</button></p>
+        </form>
+			</div>
+		</section>
+		<aside class="secondary">
+			Secondary class
+		</aside>
+		<% include ../partials/template/footer.ejs %>
+		<% include ../partials/template/jsdefaults.ejs %>
+	</body>
+</html>

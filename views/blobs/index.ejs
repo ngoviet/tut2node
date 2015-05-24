@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head><% include ../partials/template/head.ejs %></head>
+	<body class="container">
+	<% include ../partials/template/header.ejs %>
+	<div>
+		
+		<h1><%= title %></h1>
+        <ul>
+          <% blobs.forEach(function(item){ %>
+          	<% console.log(item.name)  %>
+            <li>
+              <%= item.name %>
+              <%= item.badge %>
+              <%= item.dob %>
+              <%= item.isloved %>
+              <%= item._id %>
+
+							<form action="/blobs/<%= item._id %>" method="post" enctype='application/x-www-form-urlencoded'>
+								<input type="hidden" name="_method" value="DELETE">
+								<button type="submit">Delete</button>
+								<p>
+									<a href="/blobs/<%= item._id %>/edit">Edit</a>
+								</p>
+								<p>
+									<a href="/blobs/<%= item._id %>">Show</a>
+								</p>
+							</form>
+            </li>
+          <% }); %>
+				</ul>
+			</div>
+		<% include ../partials/template/footer.ejs %>
+	</div>
+		
+		<% include ../partials/template/jsdefaults.ejs %>
+	</body>
+</html>
