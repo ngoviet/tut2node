@@ -1,25 +1,17 @@
 extends layout
+block styles
+  link(rel='stylesheet', href='/plugins/datatables/css/dataTables.bootstrap.css')
 block content
-	.main
-		.row
-			#username
-				if !username
-					// Login form
-					form(accept-charset='UTF-8', action='/users/login', method='post', name='login-form')
-						.form-group-first
-							.input-group.col-sm-12
-								span.input-group-addon
-									i.fa.fa-user
-								input#email.form-control.input-log(tabindex='1', type='text', placeholder='Tài khoản hoặc email', name='email', required)
-						.form-group-last
-							.input-group.col-sm-12
-								span.input-group-addon
-									i.fa.fa-key
-								input#password.form-control(tabindex='2', placeholder='Mật khẩu', type='password', name='password', autocomplete='off', required)
-						.form-group
-							button.btn.btn-primary.col-xs-12(tabindex='3', type='submit') Đăng nhập
-						#error
-							if error
-								div(style='color:red') #{error}
-				else
-					include users/create.jade
+  .main
+    div(ng-app='app')
+      div(ng-view)
+block scripts
+  //- script(src='/plugins/datatables/js/jquery.dataTables.min.js')
+  //- script(src='/plugins/datatables/js/dataTables.bootstrap.js')
+  script(src='/bower/angular/angular.min.js')
+  script(src='/bower/angular-route/angular-route.min.js')
+  script(src='/js/app/app.js')
+  script(src='/js/app/route-config.js')
+  script(src='/js/app/lienhe/lienhe.js')
+  script(src='/js/app/services/api-service.js')
+    

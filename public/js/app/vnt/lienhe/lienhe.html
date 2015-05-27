@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>DANH SÁCH NGƯỜI LIÊN HỆ</h2>
+    </div>
+    <div class="panel-body">
+      <p class="text-center" ng-show="!vm.contacts"><span class="fa fa-spinner fa-5x fa-spin"></span></p>
+      <table id="data" class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Tỉnh</th>
+            <th>Tên công ty</th>
+            <th>Địa chỉ</th>
+            <th>Người liên hệ</th>
+            <th>SĐT</th>
+            <th>Chức vụ</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="contact in vm.contacts">
+            <td ng-bind="contact.ContactID"></td>
+            <td ng-bind="contact.CityID"></td>
+            <td ng-bind="contact.ci_Name"></td>
+            <td ng-bind="contact.ci_Address"></td>
+            <td ng-bind="contact.ct_Name"></td>
+            <td ng-bind="contact.ct_Phone"></td>
+            <td ng-bind="contact.ct_Job"></td>
+            <td>
+              <button id="tooltip" title="Sửa liên hệ" data-rel="tooltip" class="btn btn-success" ng-click="editContact(contact.CustomerID, contact.ContactID)">
+                <i class="fa fa-pencil-square-o"></i> Sửa
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

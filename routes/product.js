@@ -5,7 +5,7 @@ var localSvr = require('../services/local-service');
 
 router.get('/', restrict, function(req, res, next){
 	var cmd = "SELECT ProductID, Name, ProductNumber, ModifiedDate \
-			FROM Production.Product"
+			FROM Production.Product";
 
   	localSvr.query(cmd, function(err, data){
   		console.dir(data);
@@ -20,16 +20,16 @@ router.get('/', restrict, function(req, res, next){
 	
 });
 
-router.get('/api/product', restrict, function(req, res, next){
+router.get('/api/products', restrict, function(req, res, next){
 	var cmd = "SELECT ProductID, Name, ProductNumber, ModifiedDate \
 			FROM Production.Product"
 
   	localSvr.query(cmd, function(err, data){
   		if(err){
-  			return res.status(500).json({error: 'Lỗi get product list'});
+  			return res.status(500).json({error: 'Lỗi get product list' + err});
   		}
 
-		res.json(data);
+			res.json(data);
   	});
 });
 

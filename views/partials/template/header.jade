@@ -11,26 +11,26 @@
       i.fa.fa-search
       input.form-control(type='text', placeholder='Tìm kiếm...')
     ul.nav.navbar-nav.navbar-right
-      li.dropdown.visible-md.visible-lg
-        a.dropdown-toggle(href='#', data-toggle='dropdown')
-          img(src='../ico/flags/USA.png', style='height:18px; margin-top:-2px;padding:0 7px')
-        ul.dropdown-menu
-          li
-            a(href='#')
-              img(src='../ico/flags/USA.png', style='height:18px; margin-top:-2px;')
-              |  US
-          li
-            a(href='#')
-              img(src='../ico/flags/Spain.png', style='height:18px; margin-top:-2px;')
-              |  Spanish
-          li
-            a(href='#')
-              img(src='../ico/flags/Germany.png', style='height:18px; margin-top:-2px;')
-              |  German
-          li
-            a(href='#')
-              img(src='../ico/flags/Poland.png', style='height:18px; margin-top:-2px;')
-              |  Polish
+      //- li.dropdown.visible-md.visible-lg
+      //-   a.dropdown-toggle(href='#', data-toggle='dropdown')
+      //-     img(src='../ico/flags/USA.png', style='height:18px; margin-top:-2px;padding:0 7px')
+      //-   ul.dropdown-menu
+      //-     li
+      //-       a(href='#')
+      //-         img(src='../ico/flags/USA.png', style='height:18px; margin-top:-2px;')
+      //-         |  US
+      //-     li
+      //-       a(href='#')
+      //-         img(src='../ico/flags/Spain.png', style='height:18px; margin-top:-2px;')
+      //-         |  Spanish
+      //-     li
+      //-       a(href='#')
+      //-         img(src='../ico/flags/Germany.png', style='height:18px; margin-top:-2px;')
+      //-         |  German
+      //-     li
+      //-       a(href='#')
+      //-         img(src='../ico/flags/Poland.png', style='height:18px; margin-top:-2px;')
+      //-         |  Polish
       li.dropdown.visible-md.visible-lg
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           i.fa.fa-comments-o
@@ -160,6 +160,14 @@
           i.fa.fa-ellipsis-v
     .sidebar-menu
       ul.nav.nav-sidebar
+        li
+          a(href='/api/contacts')
+            i.fa.fa-child
+            span.text  API Liên hệ
+        li
+          a(href='/vnt#/lienhe')
+            i.fa.fa-child
+            span.text  Liên hệ
         li
           a(href='/product')
             i.fa.fa-laptop

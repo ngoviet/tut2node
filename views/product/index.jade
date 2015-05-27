@@ -3,35 +3,13 @@ block styles
   link(rel='stylesheet', href='/plugins/datatables/css/dataTables.bootstrap.css')
 block content
   .main
-    .row
-      .panel.panel-default
-        .panel-heading
-          h2 PRODUCT LIST
-        .panel-body
-          table#Product.table.table-striped.table-bordered
-            thead
-              tr
-                th Id
-                th Name
-                th Product Number
-                th Modified Date
-            tbody
-              for p in Product
-                tr
-                  td= p.ProductID
-                  td= p.Name
-                  td= p.ProductNumber
-                  td= p.ModifiedDate
-            tfooter
-              tr
-                td(colspan='4', style="text-align: right;") Số bản ghi: #{Product.length}
-
+    div(ng-app="app")
+      div(ng-view)
 block scripts
-  script(src='/plugins/datatables/js/jquery.dataTables.min.js')
-  script(src='/plugins/datatables/js/dataTables.bootstrap.js')
-  script.
-    $(document).ready(function(){
-      $('#Product').DataTable(
-        //- "ajax": ''
-      );
-    });
+  script(src='/bower/angular/angular.min.js')
+  script(src='/bower/angular-route/angular-route.min.js')
+  script(src='/js/app/product/app.js')
+  script(src='/js/app/product/route-config.js')
+  script(src='/js/app/product/products.js')
+  script(src='/js/app/services/api-service.js')
+
